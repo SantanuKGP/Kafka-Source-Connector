@@ -1,0 +1,24 @@
+{
+"name": "orders-source",
+"config": {
+"connector.class": "io.debezium.connector.postgresql.PostgresConnector",
+"tasks.max": 1,
+"database.hostname": "localhost",
+"database.port": 5000,
+"database.user": "postgres",
+"database.password": "admin",
+"database.dbname": "mytest",
+"database.server.name": "PostgreSQL_14",
+"schema.include.list": "public",
+"topic.creation.default.replication.factor": 1,
+"topic.creation.default.partitions": 1,
+"topic.creation.default.cleanup.policy": "compact",
+"topic.creation.default.compression.type": "lz4",
+"topic.creation.groups": "productlog",
+"topic.creation.productlog.include": "PostgreSQL_14\\.public\\.mytest.*",
+"topic.creation.productlog.replication.factor": 1,
+"topic.creation.productlog.partitions": 2,
+"plugin.name": "pgoutput",
+"slot.name": "solt_1"
+}
+}
